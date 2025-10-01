@@ -23,6 +23,11 @@ namespace Taswq_Backend.Controllers
         {
             return new Person(){ username= username, password=password };
         }
+        [HttpGet("test")]
+        public Person GetTest()
+        {
+            return new Person(){ username= username, password=password };
+        }
         [HttpPost("login")]
         public LoginResult login(Person person) {
             if (person.username != username)
