@@ -4,29 +4,26 @@ namespace Taswq_Backend.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class PersonController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+      
 
         private readonly string username = "m";
         private readonly string password = "p";
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<PersonController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public PersonController(ILogger<PersonController> logger)
         {
             _logger = logger;
         }
 
-        [HttpGet(Name = "Person")]
+        [HttpGet]
         public Person Get()
         {
             return new Person(){ username= username, password=password };
         }
-        [HttpPost]
+        [HttpPost("login")]
         public LoginResult login(Person person) {
             if (person.username != username)
             {
