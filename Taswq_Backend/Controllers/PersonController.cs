@@ -8,7 +8,7 @@ namespace Taswq_Backend.Controllers
     {
       
 
-        private readonly string username = "m";
+        private readonly string username = "mohammed";
         private readonly string password = "p";
 
         private readonly ILogger<PersonController> _logger;
